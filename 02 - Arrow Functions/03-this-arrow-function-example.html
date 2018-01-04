@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>03 - This on Arrow Function Example</title>
+</head>
+<body>
+  <button id="btn"> Make my sandwich! </button>
+
+  <script>
+    const sandwich = {
+      bread: 'white',
+      cheese: 'cheddar',
+
+      prepare: function(){
+        return `I want a sandwich with ${this.bread} bread and ${this.cheese}!`
+      },
+
+      // Old mode fallback to use "this" local
+      // make: function(){
+      //   var that = this; // that = sandwich()
+      //   window.setTimeout(function(){
+      //     // that = sandwich;
+      //     console.log(that.prepare());
+      //
+      //     // this = window;
+      //     console.log(this.prepare());
+      //   }, 500);
+      // }
+
+      // Using Arrow Function inside function to Escope function not Window
+      make: function() {
+        window.setTimeout(() => {
+          console.log(this.prepare())
+        }, 500);
+      }
+    }
+
+    // Button Element
+    const btn = document.getElementById("btn");
+
+    // Function Anonymous
+    btn.addEventListener('click', function(){
+      sandwich.make();
+    });
+
+    // Arrow Function Single Line
+    btn.addEventListener('click', () => sandwich.make());
+
+  </script>
+</body>
+</html>

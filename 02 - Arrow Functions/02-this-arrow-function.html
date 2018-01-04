@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>02 - This on Arrow Function</title>
+</head>
+<body>
+  <button id="btn"> Click Me! </button>
+
+  <script>
+    const btn = document.getElementById("btn");
+    btn.addEventListener('click', function(){
+      console.log(this);
+    });
+    // this return Element <button id="btn"> Click Me! </button>
+
+    btn.addEventListener('click', () => {
+      console.log(this); // This Return Window
+    });
+
+  </script>
+</body>
+</html>
