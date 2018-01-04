@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01 - Array From</title>
+</head>
+<body>
+
+<ul id="list">
+  <li>William</li>
+  <li>Barbara</li>
+  <li>Maria</li>
+  <li>Sergio</li>
+  <li>Well</li>
+</ul>
+
+<script>
+  /*
+    Array.from transforma todos os elementos similares do array em array,
+    para que ele possa receber todos os metodos e propriedades do prototype
+    do array
+  */
+  const text = "William"
+  console.log(Array.from(text)) // ["W", "i", "l", "l", "i", "a", "m"]
+
+  const list = document.querySelectorAll('#list li')
+  const listArrayFrom = Array.from(list)
+
+  console.log(list) // Without Array Properties
+  console.log(listArrayFrom) // With Array Properties
+
+  // .map array
+  const names = listArrayFrom.map((name) => name.textContent)
+  console.log(names);
+
+</script>
+</body>
+</html>
