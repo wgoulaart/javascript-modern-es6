@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>03 - Tagged Template literal on HTML</title>
+</head>
+<style>
+  .green {
+    color: green;
+    font-size: 25px;
+  }
+</style>
+
+<body>
+
+  <script>
+    const city = 'Campo Grande';
+    const something = ' Sertanejo Universitário';
+    const otherThing = 'Valley Pubs';
+
+    function changeTemplateLiteral(template, ...values) {
+      return template.reduce((accumulator, part, i) => {
+        return `
+                ${accumulator}
+                <span class="green">:${values[i - 1].toUpperCase()}</span>
+                ${part}
+              `
+      });
+    }
+    const text = changeTemplateLiteral `I live in ${city} the city of ${something} and ${otherThing}!`;
+    document.body.innerHTML = text;
+  </script>
+
+</body>
+</html>
