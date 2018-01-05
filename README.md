@@ -1,2 +1,2 @@
 # javascript-moderne-es6
-Javascript Modern ES6  - Exercices the Course
+Joga 10 em guri, força, fé e foco.
