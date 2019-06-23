@@ -1,0 +1,29 @@
+<!--
+  Object.entries:
+  Separa os dados do Objeto em chave e valor, cria um array
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>08 - Object.entries </title>
+</head>
+
+<body>
+</body>
+
+<script>
+  const animals = {
+    camel: 3,
+    dog: 2,
+    cat: 5
+  }
+
+  const animalsMap = new Map(Object.entries(animals))
+
+  console.log(animalsMap.size) // 3
+  console.log(animalsMap.has('Lamma')) // false
+  console.log(animalsMap.get('dog')) // 2
+</script>
+
+</html>
