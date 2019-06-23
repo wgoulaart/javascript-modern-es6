@@ -1,0 +1,28 @@
+<!--
+  Object.values: Retorna um array contento os valores do objeto em array
+  Object.values(objeto)
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>09 - Object.values </title>
+</head>
+
+<body>
+</body>
+
+<script>
+  const animals = {
+    camel: 3,
+    dog: 2,
+    cat: 5
+  }
+
+  const animalsMap = Object.values(animals)
+
+  console.log(animalsMap) //[3, 2, 5]
+  console.log('Total of animais:', animalsMap.reduce((a, b) => a + b)) // 10
+</script>
+
+</html>
